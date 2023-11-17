@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class Search extends StatelessWidget {
@@ -6,11 +8,11 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor:Colors.black87,
       appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Padding(
-            padding: const EdgeInsets.only(left: 90),
+          title: const Padding(
+            padding: EdgeInsets.only(left: 90),
             child: Text(
               'Good Morning',
               style: TextStyle(fontStyle: FontStyle.italic),
@@ -22,7 +24,7 @@ class Search extends StatelessWidget {
           ]),
       body: Column(children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: Row(
             children: [
               Padding(
@@ -85,165 +87,186 @@ class Search extends StatelessWidget {
             ],
           ),
         ),
-        Column(children: [
+        Column(children: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(suffixIcon: Icon(Icons.my_library_music_outlined),
-                  hintText: 'search your songs',
+              decoration: InputDecoration(
+                  suffixIcon: Icon(Icons.my_library_music_outlined),
+                  hintText: 'search your songs',hintStyle: TextStyle(color: Colors.orangeAccent),
                   border: OutlineInputBorder(),
                   filled: true,
                   fillColor: Colors.white),
             ),
           )
         ]),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Container(
-                    width: 220,
-                    height: 50,
-                    child: Row(children: [
-                      Icon(Icons.favorite, size: 40),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50),
-                        child: Text('Liked Songs',
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white70)),
-                      )
-                    ]),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Colors.blueAccent, Colors.white54]),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
-                    child: Container(
-                      child: Row(children: [
-                        Icon(Icons.multitrack_audio_sharp, size: 40),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 220,
+                      height: 50,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Colors.blueAccent, Colors.white54]),
+                      ),
+                      child: Row(children: const [
+                        Icon(Icons.favorite, size: 40),
                         Padding(
-                          padding: const EdgeInsets.only(left: 50),
-                          child: Text('Harris House',
+                          padding: EdgeInsets.only(left: 50),
+                          child: Text('Liked Songs',
                               style: TextStyle(
                                   fontSize: 20, color: Colors.white70)),
                         )
                       ]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
+                      child: Container(
+                        width: 220,
+                        height: 50,
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Colors.orangeAccent, Colors.white70]),
+                        ),
+                        child: Row(children: const [
+                          Icon(Icons.multitrack_audio_sharp, size: 40),
+                          Padding(
+                            padding: EdgeInsets.only(left: 50),
+                            child: Text('Harris House',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white70)),
+                          )
+                        ]),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                child: Row(
+                  children: [
+                    Container(
                       width: 220,
                       height: 50,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [Colors.orangeAccent, Colors.white70]),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Container(
-                    width: 220,
-                    height: 50,
-                    child: Row(children: [
-                      Icon(Icons.queue_music_outlined, size: 40),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40),
-                        child: Text('Special',
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white70)),
-                      )
-                    ]),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Colors.white38, Colors.black54]),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
-                    child: Container(
                       child: Row(children: [
-                        Icon(Icons.pages_rounded, size: 40),
+                        Icon(Icons.queue_music_outlined, size: 40),
                         Padding(
-                          padding: const EdgeInsets.only(left: 30),
-                          child: Text('Melodies of 90s',
+                          padding: const EdgeInsets.only(left: 40),
+                          child: Text('Special',
                               style: TextStyle(
-                                  fontSize: 20, color: Colors.white54)),
+                                  fontSize: 20, color: Colors.white70)),
                         )
                       ]),
-                      width: 220,
-                      height: 50,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                            colors: [Colors.lightGreen, Colors.black45]),
+                            colors: [Colors.white38, Colors.black54]),
                       ),
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
+                      child: Container(
+                        child: Row(children: [
+                          Icon(Icons.pages_rounded, size: 40),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30),
+                            child: Text('Melodies of 90s',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white54)),
+                          )
+                        ]),
+                        width: 220,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Colors.lightGreen, Colors.black45]),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Container(
-                    width: 220,
-                    height: 50,
-                    child: Row(children: [
-                      Icon(Icons.rocket_launch, size: 40),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50),
-                        child: Text('Productive',
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white38)),
-                      )
-                    ]),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Colors.pinkAccent, Colors.black12]),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
-                    child: Container(
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 220,
+                      height: 50,
                       child: Row(children: [
-                        Icon(Icons.repeat_one, size: 40),
+                        Icon(Icons.rocket_launch, size: 40),
                         Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Text('Recently played',
+                          padding: const EdgeInsets.only(left: 50),
+                          child: Text('Productive',
                               style: TextStyle(
-                                  fontSize: 20, color: Colors.white60)),
+                                  fontSize: 20, color: Colors.white38)),
                         )
                       ]),
-                      width: 220,
-                      height: 50,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                            colors: [Colors.redAccent, Colors.white38]),
+                            colors: [Colors.pinkAccent, Colors.black12]),
                       ),
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
-        )
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 8, 8, 8),
+                      child: Container(
+                        child: Row(children: [
+                          Icon(Icons.repeat_one, size: 40),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text('Recently played',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white60)),
+                          )
+                        ]),
+                        width: 220,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Colors.redAccent, Colors.white38]),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListTile(
+            tileColor: Colors.white,
+            shape: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            leading: CircleAvatar(),
+            title: Text('hg'),
+            subtitle: Text('gyuh'),
+            trailing: Text('ygiuyg'),
+          ),
+        ),
       ]),
     );
   }
